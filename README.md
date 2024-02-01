@@ -62,22 +62,6 @@ The following required dependencies should be obtainable via the Google Colab, b
 ### External packages
 None
 
-### The data set
-Two data files were prepared for this school activity, both in JSON format. JSON files are, essentially, dictionaries.
-
-The alerts were all issued on the night of 2021-02-05 UT. The total number of alerts issued on that night approximated 1 million. If all the alerts were to be used, complete with all their entries, they total disk space for the 2021-02-05 night is larger than 16GB. To facilitate the download and handling of the data, alerts were selected that:
-- have at least 2 detections for the source (ndethist >= 2)
-- are likely real according to two real/bogus classifiers (drb > 0.8; braai > 0.8)
-- left a positive residual after image subtraction, i.e. the flux in the science image is larger than in the template image (warning: the source might have been fainter than the template in a past science image, generating a "negative" subtraction!)
-
-The data files are `data/fast_transient_alerts.json` for the alerts, `data/fast_transient_lc.json` for the light curves.
-
-- `data/fast_transient_alerts.json` Uniform JSON file (readable as a table using `pandas`) containing a selection of relevant information from the original alerts.
-- `data/fast_transient_lc.json` Light curves. The light curve of some transients have thousands of data points. To keep the data set manageable and our eyes on the scientific objective to discover fast transients, some the light curves were cut. In particular, **empty light curves** were assigned to those transients that:
-    - have at least one "negative" subtraction in the past (see above)
-    - are located at Galactic latitude `-8 deg < b < +8 deg` <br>
-In addition, only those data points within the last 30 days before the alert was issued are present in the light curves. Long-duration transients, variables, and repeatingly bursting sources are outside the scope of this activity. However, data points acquired after the last alert included in the `fast_transient_alerts.json` file will be present. 
-
 ### Useful links
 [ZTF Avro schema for the alerts](https://zwickytransientfacility.github.io/ztf-avro-alert/schema.html)<br>
 [Public ZTF alerts](https://ztf.uw.edu/alerts/public/)<br>
