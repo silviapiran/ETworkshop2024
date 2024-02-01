@@ -14,8 +14,7 @@ After installing anaconda, you should (in a terminal):
 * change directories to the repository: cd etworkshop2024
 
 use conda to create an environment:
-* on mac osx: conda env create -f environment-osx.yml
-* on linux / windows wsl: conda env create -f environment-ubuntu.yml
+conda env create -f environment.yml
 
 Activate the environment with:
 
