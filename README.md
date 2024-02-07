@@ -10,7 +10,7 @@ If you are on windows, use the windows subsystem for linux: https://docs.microso
 
 After installing anaconda, you should (in a terminal):
 
-* clone the repository: git clone git@github.com:FabioRagosta/ETworkshop2024.git
+* clone the repository: git clone https://github.com/FabioRagosta/ETworkshop2024.git
 * change directories to the repository: cd ETworkshop2024
 
 use conda to create an environment:
